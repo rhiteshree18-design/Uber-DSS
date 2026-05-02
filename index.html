@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber Manager DSS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        🚖 Uber Manager Decision Support System
+    </header>
+
+    <div class="container">
+
+        <!-- Prediction Card -->
+        <div class="card">
+            <h2>Demand Prediction</h2>
+
+            <input type="number" id="hour" placeholder="Enter Time (0-23)">
+            <button onclick="predictTrips(); return false;">Predict</button>
+
+            <div id="result">Prediction Result Here</div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="cards">
+
+            <div class="small-card">
+                <h3>Peak Hour</h3>
+                <p>18:00</p>
+            </div>
+
+            <div class="small-card">
+                <h3>Low Demand</h3>
+                <p>04:00</p>
+            </div>
+
+            <div class="small-card">
+                <h3>Recommended Drivers</h3>
+                <p id="drivers">0</p>
+            </div>
+
+            <div class="small-card">
+                <h3>Demand Status</h3>
+                <p id="status">Normal</p>
+            </div>
+            <!-- Replace Avg Fare Card -->
+
+            <div class="small-card">
+                <h3>Revenue Forecast</h3>
+                <p id="revenueTrip">₹0</p>
+            </div>
+
+            <div class="small-card">
+                <h3>Best Zone</h3>
+                <p>NCR Central</p>
+            </div>
+
+        </div>
+
+        <!-- Graph Card -->
+        <div class="card">
+            <h2>Trips Forecast Graph</h2>
+            <canvas id="myChart"></canvas>
+        </div>
+
+
+        <div class="card">
+            <h2>Nearby Hours Trips Comparison</h2>
+            <canvas id="barChart"></canvas>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
